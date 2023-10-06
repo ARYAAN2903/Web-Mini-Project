@@ -1,6 +1,6 @@
 /* Custom CSS for Navbar */
 .navbar {
-    background-color: rgb(18, 18, 19) !important;
+    background-color: rgb(18, 18, 19) ;
     padding: 20px 80px !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06) !important;
   }
@@ -13,6 +13,12 @@
   .navbar-toggler {
     font-size: 24px !important;
     background-color: #17cf97 !important;
+    margin-left: auto;
+  }
+  .user-icon{
+    font-size: 34px !important;
+    color: #17cf97 !important;
+    margin-left: 10px;
   }
   
   .navbar-toggler-icon {
@@ -76,6 +82,8 @@
     padding: 0;
     color: white;
     text-align: center;
+
+    flex-grow: 1; /* Allow the title to take available space */
   }
 
   

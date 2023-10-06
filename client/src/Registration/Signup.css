@@ -114,6 +114,47 @@
     text-align: center;
   }
 
+  /* Add these styles to your Signup.css file or component */
+
+/* Style the parent container (flex container) */
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+/* Style the Department and User Type dropdowns */
+.w-50 select {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid rgb(17, 15, 15);
+  background: transparent;
+  outline: none;
+  color: black;
+  font-size: 16px;
+}
+
+/* Style the select options */
+.w-50 select option {
+  background-color: #fff; /* Background color for options */
+  color: #000; /* Text color for options */
+  
+}
+
+/* Style the select when hovered */
+.w-50 select:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Style the select when focused */
+.w-50 select:focus {
+  border: 1px solid rgba(30, 85, 250, 0.47);
+  background-color: #fff;
+}
+
+
   /* Media Queries for Responsive Background */
 @media (max-width: 768px) {
   body {
