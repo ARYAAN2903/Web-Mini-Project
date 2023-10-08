@@ -184,7 +184,19 @@ const termsContainerStyles = {
             </div>
             <div className="time-input" style={dateInputStyles}>
               <label>
-                Time:
+                Start Time:
+                <input
+                  type="time"
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                  required
+                  style={inputStyles}
+                />
+              </label>
+            </div>
+            <div className="time-input" style={dateInputStyles}>
+              <label>
+                End Time:
                 <input
                   type="time"
                   value={time}
