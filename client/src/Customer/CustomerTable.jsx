@@ -1,16 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import CancellationModal from '../Components/CancellationModal';
 
 const tableStyle = {
   borderCollapse: 'collapse',
   width: '100%',
-  backgroundColor: '#f2f2f2', // Background color for the table
-  border: '2px solid black', // Border color for the table
+  backgroundColor: '#f2f2f2',
+  border: '2px solid black',
 };
 
 const thStyle = {
-  backgroundColor: '#333', // Background color for table header
-  color: '#fff', // Text color for table header
+  backgroundColor: '#333',
+  color: '#fff',
   fontWeight: 'bold',
   padding: '8px',
   textAlign: 'left',
@@ -23,15 +24,33 @@ const tdStyle = {
 };
 
 const headingStyle = {
-  backgroundColor: '#fff', // Background color for the heading
-  color: '#333', // Text color for the heading
+  backgroundColor: '#fff',
+  color: '#333',
   padding: '10px',
   textAlign: 'center',
 };
 
-class CustomerTable extends React.Component {
+class CustomerTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedBooking: null,
+    };
+  }
+
+  handleModalOpen = (booking) => {
+    this.setState({ selectedBooking: booking });
+  };
+
+  handleModalClose = () => {
+    this.setState({ selectedBooking: null });
+  };
+
   render() {
-    const { bookings } = this.props;
+    const data = [
+      { bookingId: 1, name: 'John Doe', venue: 'Mondini Hall', startTime: '3:00 PM', endTime: '5:00 PM', status: 'Booked', paymentInfo: 'Paid' },
+      { bookingId: 2, name: 'Jane Smith', venue: 'Seminar Hall', startTime: '2:30 PM', endTime: '4:30 PM', status: 'Booked', paymentInfo: 'Paid' },
+    ];
 
     return (
       <div>
@@ -49,10 +68,14 @@ class CustomerTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((row) => (
+            {data.map((row) => (
               <tr key={row.bookingId}>
                 <td style={tdStyle}>
-                  <Link to={`/cancellation/${row.bookingId}`} style={{ textDecoration: 'none', color: 'blue' }}>
+                  <Link
+                    to="#"
+                    onClick={() => this.handleModalOpen(row)}
+                    style={{ textDecoration: 'none', color: 'blue', cursor: 'pointer' }}
+                  >
                     {row.bookingId}
                   </Link>
                 </td>
@@ -66,6 +89,13 @@ class CustomerTable extends React.Component {
             ))}
           </tbody>
         </table>
+        {this.state.selectedBooking && (
+          <CancellationModal
+            booking={this.state.selectedBooking}
+            onCancel={this.handleCancelBooking}
+            onClose={this.handleModalClose}
+          />
+        )}
       </div>
     );
   }

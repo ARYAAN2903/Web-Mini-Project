@@ -21,14 +21,7 @@ function CustomerDashboard() {
     description: "Discover our spacious halls that are perfect for conferences, seminars, and social gatherings. These versatile spaces can be customized to meet your event needs."
   };
 
-  const [bookings, setBookings] = useState([
-    { bookingId: 1, name: 'John Doe', venue: 'Mondini Hall', startTime: '3:00 PM', endTime: '5:00 PM', status: 'Booked', paymentInfo: 'Paid' },
-    { bookingId: 2, name: 'Jane Smith', venue: 'Seminar Hall', startTime: '2:30 PM', endTime: '4:30 PM', status: 'Booked', paymentInfo: 'Paid' },
-  ]);
 
-  const addBooking = (booking) => {
-    setBookings([...bookings, booking]);
-  };
 
   return (
     <div>
@@ -84,7 +77,7 @@ function CustomerDashboard() {
           </div>
           <hr />
           {/* Include the FacultyTable component within the JSX */}
-          <CustomerTable bookings={bookings} addBooking={addBooking} />
+          <CustomerTable />
         </div>
       </section>
     </div>

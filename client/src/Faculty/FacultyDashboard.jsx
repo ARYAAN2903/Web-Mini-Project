@@ -1,5 +1,4 @@
-// FacultyDashboard.jsx
-import React, { useState } from "react";
+import React from "react";
 import '../Dashboard/venues.css';
 import img1 from "../assets/img1.jpg";
 import img3 from "../assets/img3.jpg";
@@ -19,15 +18,6 @@ function FacultyDashboard() {
     title: "Halls",
     imageSrc: img3, // Replace with the actual image URL
     description: "Discover our spacious halls that are perfect for conferences, seminars, and social gatherings. These versatile spaces can be customized to meet your event needs."
-  };
-
-  const [bookings, setBookings] = useState([
-    { bookingId: 1, name: 'John Doe', venue: 'Mondini Hall', startTime: '3:00 PM', endTime: '5:00 PM', status: 'Booked', paymentInfo: 'Paid' },
-    { bookingId: 2, name: 'Jane Smith', venue: 'Seminar Hall', startTime: '2:30 PM', endTime: '4:30 PM', status: 'Booked', paymentInfo: 'Paid' },
-  ]);
-
-  const addBooking = (booking) => {
-    setBookings([...bookings, booking]);
   };
 
   return (
@@ -84,7 +74,7 @@ function FacultyDashboard() {
           </div>
           <hr />
           {/* Include the FacultyTable component within the JSX */}
-          <FacultyTable bookings={bookings} addBooking={addBooking} />
+          <FacultyTable />
         </div>
       </section>
     </div>

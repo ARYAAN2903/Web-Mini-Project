@@ -16,14 +16,6 @@ function StudentDashboard() {
 
 
 
-  const [bookings, setBookings] = useState([
-    { bookingId: 1, name: 'John Doe', venue: 'Basketball Court', startTime: '3:00 PM', endTime: '5:00 PM', status: 'Booked', paymentInfo: 'Paid' },
-    { bookingId: 2, name: 'Jane Smith', venue: 'Football Ground', startTime: '2:30 PM', endTime: '4:30 PM', status: 'Booked', paymentInfo: 'Paid' },
-  ]);
-
-  const addBooking = (booking) => {
-    setBookings([...bookings, booking]);
-  };
 
   return (
     <div>
@@ -64,7 +56,7 @@ function StudentDashboard() {
           </div>
           <hr />
           {/* Include the FacultyTable component within the JSX */}
-          <StudentTable bookings={bookings} addBooking={addBooking} />
+          <StudentTable />
         </div>
       </section>
     </div>
