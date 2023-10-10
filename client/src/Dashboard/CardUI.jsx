@@ -19,7 +19,7 @@ const Card = (props) => {
           incidunt.
         </p>
         <Link to={path}>
-          <button className='btn btn-outline-success'>Book Now</button>
+          <button className='btn btn-outline-success'>Know More</button>
         </Link>
       </div>
     </div>

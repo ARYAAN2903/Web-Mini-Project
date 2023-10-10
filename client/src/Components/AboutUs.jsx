@@ -1,39 +1,42 @@
 import React from "react";
-import { FaGithubSquare, FaInstagramSquare, FaTwitterSquare } from 'react-icons/fa';
+import { FaEnvelopeSquare, FaGithubSquare, FaInstagramSquare, FaTwitterSquare } from 'react-icons/fa';
 import './about.css';
+import image1 from '../assets/Advay.webp'; // Import your WebP images
+import image2 from '../assets/Dhruuv.webp';
+import image3 from '../assets/Advay.webp';
 
 function AboutUs() {
     const teamMembers = [
         {
             name: "Aryaan Sawant",
-            role: "Head of SEO",
-            imageSrc: "https://reactjs.org/logo-og.png",
-            socialLinks: {
-                twitter: "#",
-                github: "#",
-                instagram: "#"
-            },
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quia vitae natus nihil deleniti ipsum voluptatum excepturi quibusdam eligendi nulla repudiandae voluptate enim doloribus asperiores esse rem, consectetur, corporis dolores."
-        },
-        {
-            name: "John Doe",
             role: "Web Developer",
-            imageSrc: "https://reactjs.org/logo-og.png", // Replace with John's image URL
+            imageSrc: image2,
             socialLinks: {
                 twitter: "#",
                 github: "#",
-                instagram: "#"
+                
             },
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quia vitae natus nihil deleniti ipsum voluptatum excepturi quibusdam eligendi nulla repudiandae voluptate enim doloribus asperiores esse rem, consectetur, corporis dolores."
         },
         {
-            name: "Jane Smith",
-            role: "Designer",
-            imageSrc: "https://reactjs.org/logo-og.png", // Replace with Jane's image URL
+            name: "Dhruuv Naik",
+            role: "Web Developer",
+            imageSrc: image2, // Replace with John's image URL
             socialLinks: {
                 twitter: "#",
                 github: "#",
-                instagram: "#"
+                
+            },
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quia vitae natus nihil deleniti ipsum voluptatum excepturi quibusdam eligendi nulla repudiandae voluptate enim doloribus asperiores esse rem, consectetur, corporis dolores."
+        },
+        {
+            name: "Advay Gujar",
+            role: "Designer",
+            imageSrc: image3, // Replace with Jane's image URL
+            socialLinks: {
+                twitter: "#",
+                github: "#",
+                
             },
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quia vitae natus nihil deleniti ipsum voluptatum excepturi quibusdam eligendi nulla repudiandae voluptate enim doloribus asperiores esse rem, consectetur, corporis dolores."
         },
@@ -43,14 +46,7 @@ function AboutUs() {
         <section className="section-white">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12 text-center">
-                        <h2 className="section-title">
-                            The Team Behind Our Company
-                        </h2>
-                        <p className="section-subtitle">
-                            Meet our dedicated team members.
-                        </p>
-                    </div>
+
                     {teamMembers.map((member, index) => (
                         <div className="col-sm-6 col-md-4" key={index}>
                             <div className="team-item">
@@ -67,7 +63,7 @@ function AboutUs() {
                                     <ul className="team-icon">
                                         <li>
                                             <a href={member.socialLinks.twitter} className="twitter">
-                                                <FaTwitterSquare />{" "}
+                                                <FaEnvelopeSquare/>{" "}
                                             </a>
                                         </li>
                                         <li>
@@ -75,11 +71,7 @@ function AboutUs() {
                                                 <FaGithubSquare />
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href={member.socialLinks.instagram} className="instagram">
-                                                <FaInstagramSquare />
-                                            </a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
