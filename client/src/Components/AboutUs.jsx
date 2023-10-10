@@ -48,7 +48,7 @@ function AboutUs() {
                 <div className="row">
 
                     {teamMembers.map((member, index) => (
-                        <div className="col-sm-6 col-md-4" key={index}>
+                        <div className="col-sm-4 col-md-4" key={index}>
                             <div className="team-item">
                                 <img
                                     src={member.imageSrc}
